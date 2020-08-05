@@ -1,11 +1,3 @@
-computation of the probability that object is background star
-http://model.obs-besancon.fr/
-convert H2/3 mag in Koorneef system
-total numbr of stars vs number of stars close to expected mag
-scale down to IRIS FoV
-
-
-
 IRDIS
 =====
 
@@ -123,51 +115,3 @@ Reduction:
   IRDIS_prepare_MLOCI
     -bring data to the required format for MLOCI
 
-
-Analysis:
----------
-
-  Astrometry_Photometry
-  Astrometry_Photometry_MANUAL
-
-  planet_mass
-    computes CC mass for given apparant magnitude
-
-  CC_moved_by_one_pixel
-    -values have to be provided manually
-    -gives the time in days when the CC moved by one pixel assuming circular and face-on configuration
-
-  source_density
-    estimate average number of sources in FoV
-    http://model.obs-besancon.fr/
-
-  cpm_am
-    common proper motion if several epochs available
-
-IFS
-===
-
-PCA_SPHERE_IFS / _v2
-  currently v2 is up to date
-  Usually I get the IFS spectrum from Anne-lise. PSF and image cube are divided by the corresponding DIT (In addition, ND filter corrections are applied.). Therefore, I will multiply the data again so that the scaling in the PCA routine makes sense
-  difference is only in handling the cubes
-  normal: [x,y,lam,n]
-  v2: [x,y,n,lam]
-
-IFS_correlationMatrix
-  compute correlation matrix at certain position
-  path and position has to be provided manually
-
-Astrometry_Photometry_SPHERE_IFS
-  get astrometry and photometry from IFS data
-
-IFS_extract_contrast
-  reads in the result files of each wavelength and extracts contrast, S/N, and writes it into a new file
-
-IFS_extract_contrast_AtLocation
-  extracts contrast at planets position (has to be manually provided)
-  useful if IFS channel has no planet signal
-
-
-IFS_extract_bands_BlindTest	;split cube w.r.t. wavelength
-  -currently eigen values are overwritten when doing fake planet injection
