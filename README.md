@@ -90,28 +90,4 @@ Reduction:
     -combine 2 filters into one cube if desired
     -can take a while depending on size of input frames
 
-  COPY IMAGE CUBE, ANGLES, PSF TO WORKING DIR (..../star/IRDIS/)
-
-  SDI_SPHERE
-  PCA_LOCI_ADI, /sphere
-    -PCA, LLSG, LOCI, ADI
-      !!! NOT set up for H32 yet !!!
-    -PSF must have odd number of elements (e.g. 51x51)
-    -path and file name has to be provided in code
-    -currently eigen values are overwritten when doing fake planet injection in PCA
-
-  planet_mass_detection_limit
-    -??? filter handling correct ???
-    -currently rounding the age, i.e. 2.3 Myr is 2Myr, 2.6Myr is 3 Myr in the model
-    -currently only for PCA reduction
-
-  OBSOLETE - make_overview_plot
-
-  IRDIS_SADI
-    -dimension must be even (e.g. 800x800)
-    -im1-im2 after matching, then ADI
-    -probably a lot of self subtraction for close-in objects
-
-  IRDIS_prepare_MLOCI
-    -bring data to the required format for MLOCI
 
